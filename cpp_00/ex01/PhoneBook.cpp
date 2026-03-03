@@ -38,7 +38,8 @@ void PhoneBook::search()
             << "|" << std::endl;
     }
     std::cout << "Enter Contact index: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        std::cin.clear();
     if (input.length() != 1 || !std::isdigit(input[0]) || (search_index = input[0] - '0') >= _count)
         std::cout << "Invalid Contact index" << std::endl;
     else
@@ -51,7 +52,8 @@ std::string PhoneBook::_returnField(std::string prompt)
     do
     {
         std::cout << "Enter: " << prompt << ": ";
-        std::getline(std::cin, field);
+        if (!std::getline(std::cin, field))
+            std::cin.clear();
         field = trim(field);
         if (!field.empty())
             break;

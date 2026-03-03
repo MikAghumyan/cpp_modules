@@ -3,7 +3,6 @@
 #include <string>
 
 std::string truncate(std::string const &str);
-// std::string formatField(std::string str);
 std::string trim(std::string const &str);
 
 #endif
