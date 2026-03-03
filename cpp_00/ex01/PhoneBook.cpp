@@ -6,15 +6,31 @@ PhoneBook::~PhoneBook() {}
 void PhoneBook::add()
 {
     Contact new_contact;
+    std::string field;
 
-    new_contact.setFirstName(_returnField("First Name"));
-    new_contact.setLastName(_returnField("Last Name"));
-    new_contact.setNickname(_returnField("Nickname"));
+    field = _returnField("First Name");
+    if (field.empty())
+        return;
+    new_contact.setFirstName(field);
+    field = _returnField("Last Name");
+    if (field.empty())
+        return;
+    new_contact.setLastName(field);
+    field = _returnField("Nickname");
+    if (field.empty())
+        return;
+    new_contact.setNickname(field);
     do
     {
-        new_contact.setPhoneNumber(_returnField("Phone Number"));
+        field = _returnField("Phone Number");
+        if (field.empty())
+            return;
+        new_contact.setPhoneNumber(field);
     } while (!_isNumberValid(new_contact.getPhoneNumber()));
-    new_contact.setDarkestSecret(_returnField("Darkest Secret"));
+    field = _returnField("Darkest Secret");
+    if (field.empty())
+        return;
+    new_contact.setDarkestSecret(field);
     _contacts[_oldest] = new_contact;
     _oldest = (_oldest + 1) % 8;
     if (_count < 8)
@@ -39,7 +55,7 @@ void PhoneBook::search()
     }
     std::cout << "Enter Contact index: ";
     if (!std::getline(std::cin, input))
-        std::cin.clear();
+        return;
     if (input.length() != 1 || !std::isdigit(input[0]) || (search_index = input[0] - '0') >= _count)
         std::cout << "Invalid Contact index" << std::endl;
     else
@@ -53,7 +69,7 @@ std::string PhoneBook::_returnField(std::string prompt)
     {
         std::cout << "Enter: " << prompt << ": ";
         if (!std::getline(std::cin, field))
-            std::cin.clear();
+            return ("");
         field = trim(field);
         if (!field.empty())
             break;
