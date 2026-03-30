@@ -27,7 +27,7 @@ bool validateArgs(int argc, char **argv)
         std::cerr << "invalid count of arguments" << std::endl;
         return false;
     }
-    if (std::string(argv[1]).empty() || std::string(argv[2]).empty() || std::string(argv[3]).empty())
+    if (std::string(argv[1]).empty() || std::string(argv[2]).empty())
     {
         std::cerr << "invalid arguments" << std::endl;
         return false;
