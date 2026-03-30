@@ -2,10 +2,10 @@
 
 HumanB::HumanB(const std::string &name) : m_name(name), m_weapon(NULL)
 {
-    std::cout << m_name << " born" << std::endl;
+    std::cout << m_name << "was born" << std::endl;
 }
 
-HumanB::~HumanB() { std::cout << m_name << " died" << std::endl; }
+HumanB::~HumanB() { std::cout << m_name << "was died" << std::endl; }
 
 void HumanB::setWeapon(Weapon &wp) { this->m_weapon = &wp; }
 

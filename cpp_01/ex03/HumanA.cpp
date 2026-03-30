@@ -2,10 +2,10 @@
 
 HumanA::HumanA(const std::string &name, Weapon &wp) : m_name(name), m_weapon(wp)
 {
-    std::cout << m_name << " born" << std::endl;
+    std::cout << m_name << "was born" << std::endl;
 }
 
-HumanA::~HumanA() { std::cout << m_name << " died" << std::endl; }
+HumanA::~HumanA() { std::cout << m_name << "was died" << std::endl; }
 
 void HumanA::attack()
 {
