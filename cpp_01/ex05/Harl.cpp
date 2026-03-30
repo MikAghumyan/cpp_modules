@@ -1,4 +1,4 @@
-#include <Harl.hpp>
+#include "Harl.hpp"
 
 void (Harl::*const Harl::funcPoints[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 const std::string Harl::levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
