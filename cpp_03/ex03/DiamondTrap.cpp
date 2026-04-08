@@ -39,7 +39,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 
 void DiamondTrap::whoAmI() const
 {
-    std::cout << "I am " << this->m_name << " and my ClapTrap name is " << ClapTrap::getName() << std::endl;
+    std::cout << "I am " << this->m_name << " and my ClapTrap name is " << this->ClapTrap::m_name << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target)
