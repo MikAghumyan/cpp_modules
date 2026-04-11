@@ -6,7 +6,7 @@ Cat::Cat() : Animal()
     std::cout << this->type << " created" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
     *this = other;
     std::cout << this->type << " copied" << std::endl;

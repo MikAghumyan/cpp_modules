@@ -7,10 +7,9 @@ Cat::Cat() : AAnimal()
     std::cout << this->type << " created" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : AAnimal(other)
 {
     this->brain = new Brain(*other.brain);
-    *this = other;
     std::cout << this->type << " copied" << std::endl;
 }
 
