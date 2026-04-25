@@ -23,6 +23,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     AForm::execute(executor);
     std::ofstream file((m_target + "_shrubbery").c_str());
+    if (!file.is_open())
+        throw std::runtime_error("Could not open file: " + m_target + "_shrubbery");
     file << "    *    \n   ***   \n  *****  \n   |||   \n";
     file.close();
 }
